@@ -6,7 +6,7 @@
     <meta name="description" content="Два пончика и чашка кофе - уютная кофейня в Москве. Свежий кофе, вкусные пончики и теплая атмосфера.">
     <title>Два пончика и чашка кофе - Ваша уютная кофейня</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
         /* 
          * Глобальные CSS-переменные для цветовой схемы сайта
@@ -79,8 +79,8 @@
         }
 
         .logo {
-            font-family: 'Lobster', cursive;
-            font-size: 2em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
             color: var(--light-text-color);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             cursor: pointer;
@@ -155,7 +155,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop') no-repeat center center/cover;
+            background: url('Main.JPG') no-repeat center center/cover;
             transform: scale(1.1);
             filter: brightness(0.6);
             z-index: -1;
@@ -167,15 +167,16 @@
         }
 
         .hero h1 {
-            font-family: 'Lobster', cursive;
-            font-size: 6em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 7em;
             margin-bottom: 20px;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5), 0 0 20px rgba(228, 167, 136, 0.3);
         }
 
         .hero p {
             font-size: 1.5em;
             margin-bottom: 40px;
+            animation: fadeIn 2s ease-in-out 1s both;
         }
 
         .cta-button {
@@ -189,6 +190,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
+            animation: fadeIn 2s ease-in-out 2s both;
         }
 
         .cta-button:hover {
@@ -211,8 +213,8 @@
 
         .section-title {
             text-align: center;
-            font-family: 'Lobster', cursive;
-            font-size: 3.5em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
             margin-bottom: 60px;
             color: var(--primary-color);
         }
@@ -227,10 +229,16 @@
         .about-text {
             flex: 1;
         }
-        .about-text h3 {
-            font-size: 1.8em;
+        h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
             margin-bottom: 20px;
             color: var(--primary-color);
+        }
+
+        .about-text h3, .menu-text h3, .contact-info h3, .contact-form h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         .about-text p {
             line-height: 1.8;
@@ -266,7 +274,7 @@
 
         .menu-item {
             display: flex;
-            align-items: flex-start;
+            gap: 50px;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px dashed var(--accent-color);
@@ -276,46 +284,59 @@
         .menu-item:hover {
             transform: translateX(10px);
         }
-        
+
         .menu-item:last-child {
             border-bottom: none;
         }
-        
-        .menu-item-icon {
-            font-size: 2.5em;
-            margin-right: 25px;
-            line-height: 1;
+
+        .menu-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
         }
 
-        .menu-item-details {
-            flex-grow: 1;
+        .menu-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 0 var(--accent-color);
+            filter: sepia(0.3) contrast(1.1);
+            transition: transform 0.4s, filter 0.4s;
         }
 
-        .menu-item-details h3 {
+        .menu-image img:hover {
+            transform: translate(-5px, -5px);
+            filter: sepia(0);
+        }
+
+        .menu-item:last-child .menu-image img {
+            animation: comboPulse 4s ease-in-out infinite;
+        }
+
+        .menu-text {
+            flex: 1;
+        }
+
+        .menu-text h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
             color: var(--primary-color);
         }
 
-        .menu-item-details p {
+        .menu-text p {
             line-height: 1.6;
             font-size: 1em;
             color: #555;
         }
 
-        .menu-item-price {
+        .menu-price {
             font-size: 1.6em;
             font-weight: 700;
             color: var(--primary-color);
-            margin-left: 20px;
-            white-space: nowrap;
-        }
-
-        /* --- Contacts Section --- */
-        #contacts .container {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
+            margin-top: 10px;
         }
 
         .contact-info, .contact-form {
@@ -331,11 +352,59 @@
             line-height: 1.8;
             margin-bottom: 20px;
         }
+        .social-section {
+            margin-bottom: 30px;
+        }
+        .social-section h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: var(--hover-glow);
+        }
+        .social-links img {
+            max-width: 60%;
+            height: auto;
+            object-fit: contain;
+        }
         .map-container {
             height: 300px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .cafe-marker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: var(--primary-color);
+            text-align: center;
+            font-weight: bold;
+            z-index: 10;
+            line-height: 1.2;
         }
 
         .map-container iframe {
@@ -383,11 +452,52 @@
             transform: translateY(-3px);
         }
 
+        /* --- Back to Top Button --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
 
         /* --- Animations --- */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes comboPulse {
+            0%, 100% {
+                box-shadow: 10px 10px 0 var(--accent-color);
+            }
+            50% {
+                box-shadow: 10px 10px 20px var(--accent-color), 0 0 30px rgba(228, 167, 136, 0.5);
+            }
         }
 
         /* --- Responsiveness --- */
@@ -406,10 +516,10 @@
                 align-items: center;
                 text-align: center;
             }
-            .menu-item-price {
-                margin-top: 15px;
-                margin-left: 0;
-            }
+    .menu-price {
+        margin-top: 15px;
+        margin-left: 0;
+    }
         }
     </style>
 </head>
@@ -431,8 +541,8 @@
     <section class="hero" id="home" aria-label="Главный баннер">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>Твоя доза счастья.</h1>
-            <p>Начни свой день правильно с идеального кофе и свежей выпечки.</p>
+            <h1>Твоя доза счастья...</h1>
+            <p>Начни свой день правильно с идеального кофе и свежей выпечки</p>
             <a href="#menu" class="cta-button">Посмотреть Меню</a>
         </div>
     </section>
@@ -443,10 +553,10 @@
                 <div class="about-text">
                      <h2 class="section-title">Наша История</h2>
                     <h3>Почему "Два пончика и чашка кофе"?</h3>
-                    <p>Наша история началась с простой мечты: создать место, где каждый мог бы найти свой маленький момент радости. "Два пончика и чашка кофе" — это не просто название, это формула идеального утра, уютного перерыва и теплой встречи. Мы верим, что простые вещи приносят самое большое удовольствие. Один пончик для тебя, второй — чтобы поделиться. И, конечно же, чашка превосходного, ароматного кофе, который объединяет.</p>
+                    <p>Наша история началась с мечты создать место, где каждый найдёт момент радости. "Два пончика и чашка кофе" — формула идеального утра, уютного перерыва и теплой встречи. Мы верим, что простые вещи приносят самое большое удовольствие. Один пончик для тебя, второй — чтобы поделиться, и чашка ароматного кофе, который объединяет.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1596464246969-15d66005537e?q=80&w=1935&auto=format&fit=crop" alt="Два аппетитных пончика и чашка кофе">
+                    <img src="Два пончика и кофе 2.JPG" alt="Два аппетитных пончика и чашка кофе">
                 </div>
             </div>
         </section>
@@ -456,36 +566,44 @@
                 <h2 class="section-title">Наши фирменные напитки</h2>
                 <div class="menu-list">
                     <div class="menu-item">
-                        <div class="menu-item-icon">☕</div>
-                        <div class="menu-item-details">
+                        <div class="menu-image">
+                            <img src="Capuccini.JPG" alt="Классический капучино">
+                        </div>
+                        <div class="menu-text">
                             <h3>Классический капучино</h3>
                             <p>Идеальное сочетание эспрессо и нежной молочной пены. Приготовлен из отборной арабики высокогорных плантаций.</p>
+                            <div class="menu-price">250 ₽</div>
                         </div>
-                        <div class="menu-item-price">250 ₽</div>
                     </div>
                     <div class="menu-item">
-                        <div class="menu-item-icon">🥤</div>
-                        <div class="menu-item-details">
+                        <div class="menu-image">
+                            <img src="Latte.JPG" alt="Карамельный латте">
+                        </div>
+                        <div class="menu-text">
                             <h3>Карамельный латте</h3>
                             <p>Нежный латте с домашним карамельным сиропом и легкой пенкой. Украшен карамельным узором.</p>
+                            <div class="menu-price">290 ₽</div>
                         </div>
-                        <div class="menu-item-price">290 ₽</div>
                     </div>
                     <div class="menu-item">
-                        <div class="menu-item-icon">🧋</div>
-                        <div class="menu-item-details">
+                        <div class="menu-image">
+                            <img src="Raf.JPG" alt="Холодный раф">
+                        </div>
+                        <div class="menu-text">
                             <h3>Холодный раф</h3>
                             <p>Освежающий напиток на основе эспрессо со сливками и ванилью. Идеально для жаркого дня.</p>
+                            <div class="menu-price">310 ₽</div>
                         </div>
-                        <div class="menu-item-price">310 ₽</div>
                     </div>
                     <div class="menu-item">
-                        <div class="menu-item-icon">🍩</div>
-                        <div class="menu-item-details">
+                        <div class="menu-image">
+                            <img src="Combo.JPG" alt="Комбо утренний заряд">
+                        </div>
+                        <div class="menu-text">
                             <h3>Комбо "Утренний заряд"</h3>
                             <p>Американо большой + два фирменных пончика с шоколадной и клубничной глазурью.</p>
+                            <div class="menu-price">380 ₽</div>
                         </div>
-                        <div class="menu-item-price">380 ₽</div>
                     </div>
                 </div>
             </div>
@@ -498,8 +616,27 @@
                     <h3>Часы работы и адрес</h3>
                     <p><strong>Пн - Пт:</strong> 8:00 - 21:00<br><strong>Сб - Вс:</strong> 9:00 - 22:00</p>
                     <p>г. Москва, Красная площадь, д. 1</p>
+                    <p><strong>Телефон:</strong> +7 (987) 654-32-10</p>
+                    <div class="social-section">
+                        <h4>Мы в соцсетях</h4>
+                        <div class="social-links">
+                            <a href="https://vk.com/doncoffee" target="_blank" rel="noopener noreferrer">
+                                <img src="Max_logo_2025.png" alt="ВКонтакте">
+                            </a>
+                            <a href="https://wa.me/79876543210" target="_blank" rel="noopener noreferrer">
+                                <img src="вотсап.jpg" alt="WhatsApp">
+                            </a>
+                            <a href="https://t.me/doncoffee" target="_blank" rel="noopener noreferrer">
+                                <img src="Телеграмм.jpeg" alt="Telegram">
+                            </a>
+                            <a href="https://www.youtube.com/@doncoffee" target="_blank" rel="noopener noreferrer">
+                                <img src="w512h5121350249269youtube.png" alt="YouTube">
+                            </a>
+                        </div>
+                    </div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.373153548979!2d37.61896207735319!3d55.75393027308252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a2e6f3a5f%3A0x6233a23a31e8486!2z0JrRgNCw0YHQvNCw0Y8g0L_Qu9C-0YjQsNGPINC_0L7Qu9C10L_QuNGB0LAsIDE!5e0!3m2!1sru!2sru!4v1716472851412!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="cafe-marker">📍🍩🍩☕<br>Два Пончика И Чашка Кофе</div>
                     </div>
                 </div>
                  <div class="contact-form">
@@ -523,6 +660,10 @@
             </div>
         </section>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Наверх">↑</button>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -557,6 +698,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
 });
