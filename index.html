@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дон Кофе - Ваша уютная кофейня</title>
+    <meta name="description" content="Два пончика и чашка кофе - уютная кофейня в Москве. Свежий кофе, вкусные пончики и теплая атмосфера.">
+    <title>Два пончика и чашка кофе - Ваша уютная кофейня</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap');
 
+        /* 
+         * Глобальные CSS-переменные для цветовой схемы сайта
+         * --primary-color: основной цвет (темно-коричневый) - используется для заголовков, кнопок и акцентов
+         * --secondary-color: вторичный цвет (светло-бежевый) - фон страницы
+         * --accent-color: акцентный цвет (персиковый) - для подсветки, кнопок и декоративных элементов
+         * --text-color: основной цвет текста (темно-коричневый)
+         * --light-text-color: светлый текст (белый) - для текста на темном фоне
+         * --hover-glow: эффект свечения при наведении на элементы
+         */
         :root {
             --primary-color: #6B4F4B;
             --secondary-color: #F8F0E3;
@@ -30,6 +40,12 @@
             overflow-x: hidden;
         }
 
+        /* 
+         * Контейнер для центрирования и ограничения ширины контента
+         * max-width: 1200px - максимальная ширина контента для удобного чтения
+         * margin: 0 auto - центрирование контейнера по горизонтали
+         * padding: 0 20px - отступы слева и справа для мобильных устройств
+         */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -399,18 +415,20 @@
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Два П<span class="donut-char">о</span>нчика и Чашка К<span class="donut-char">о</span>фе</div>
-            <ul class="nav-links">
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#menu">Меню</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav aria-label="Основная навигация">
+            <div class="nav-container">
+                <div class="logo" role="banner">Два П<span class="donut-char">о</span>нчика и Чашка К<span class="donut-char">о</span>фе</div>
+                <ul class="nav-links">
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-label="Главный баннер">
         <div class="hero-background"></div>
         <div class="hero-content">
             <h1>Твоя доза счастья.</h1>
