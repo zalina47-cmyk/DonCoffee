@@ -268,25 +268,28 @@
         }
 
         .menu-list {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
         }
 
         .menu-item {
             display: flex;
-            gap: 50px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed var(--accent-color);
-            transition: transform 0.3s ease-out;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
 
         .menu-item:hover {
-            transform: translateX(10px);
-        }
-
-        .menu-item:last-child {
-            border-bottom: none;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .menu-image {
@@ -296,6 +299,7 @@
             align-items: center;
             justify-content: center;
             font-size: 4em;
+            margin-bottom: 20px;
         }
 
         .menu-image img {
@@ -310,10 +314,6 @@
         .menu-image img:hover {
             transform: translate(-5px, -5px);
             filter: sepia(0);
-        }
-
-        .menu-item:last-child .menu-image img {
-            animation: comboPulse 4s ease-in-out infinite;
         }
 
         .menu-text {
@@ -501,25 +501,144 @@
         }
 
         /* --- Responsiveness --- */
+        
+        /* Tablet - 768px to 1024px */
+        @media (max-width: 1024px) {
+            .logo {
+                font-size: 2em;
+            }
+            
+            .hero h1 {
+                font-size: 5em;
+            }
+            
+            .section-title {
+                font-size: 3.5em;
+            }
+            
+            #about .container {
+                gap: 30px;
+            }
+            
+            #contacts .container {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+        
+        /* Mobile - up to 768px */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
             .nav-links {
-                display: none; /* Simplification for example. A hamburger menu would be better. */
+                display: none;
             }
-             .hero h1 {
-                font-size: 4em;
+            
+            .logo {
+                font-size: 1.5em;
             }
-            #about .container, #contacts .container {
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 3em;
+            }
+            
+            .hero p {
+                font-size: 1.2em;
+            }
+            
+            .cta-button {
+                font-size: 1em;
+                padding: 12px 28px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+            
+            #about .container {
                 flex-direction: column;
+                gap: 30px;
             }
-             .menu-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            
+            .about-image img {
+                box-shadow: 5px 5px 0 var(--accent-color);
             }
-    .menu-price {
-        margin-top: 15px;
-        margin-left: 0;
-    }
+            
+            .menu-list {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .menu-item {
+                padding: 25px;
+            }
+            
+            .menu-image img {
+                box-shadow: 5px 5px 0 var(--accent-color);
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 56px;
+                height: 56px;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+            
+            .cafe-marker {
+                font-size: 1.3em;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        /* Small mobile - up to 480px */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero p {
+                font-size: 1em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            h3 {
+                font-size: 1.5em;
+            }
+            
+            .menu-text h3 {
+                font-size: 1.3em;
+            }
+            
+            .menu-price {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
@@ -636,7 +755,7 @@
                     </div>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.373153548979!2d37.61896207735319!3d55.75393027308252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a2e6f3a5f%3A0x6233a23a31e8486!2z0JrRgNCw0YHQvNCw0Y8g0L_Qu9C-0YjQsNGPINC_0L7Qu9C10L_QuNGB0LAsIDE!5e0!3m2!1sru!2sru!4v1716472851412!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="cafe-marker">📍🍩🍩☕<br>Два Пончика И Чашка Кофе</div>
+                        <div class="cafe-marker">📍🍩🍩☕<br>Два Пончика и Чашка Кофе</div>
                     </div>
                 </div>
                  <div class="contact-form">
